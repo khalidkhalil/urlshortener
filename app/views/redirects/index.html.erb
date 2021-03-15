@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Redirects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shorten url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redirects.each do |redirect| %>
+      <tr>
+        <td><%= redirect.shorten_url %></td>
+        <td><%= redirect.created_at %></td>
+
+        <td><%= link_to 'Show', redirect %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Redirect', new_redirect_path %>
+
+<%= link_to 'New Shorten Link', new_link_path %>

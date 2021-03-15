@@ -1,0 +1,24 @@
+<%= form_with(model: redirect, local: true) do |form| %>
+  <% if redirect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(redirect.errors.count, "error") %> prohibited this redirect from being saved:</h2>
+
+      <ul>
+      <% redirect.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :shorten_url %>
+    <%= form.text_field :shorten_url %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
